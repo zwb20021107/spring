@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /**
+  ~ * @projectName ${PROJECT_NAME}
+  ~ * @package ${PACKAGE_NAME}
+  ~ * @className ${PACKAGE_NAME}.${NAME}
+  ~ * @copyright Copyright 2020 Thunisoft, Inc All rights reserved.
+  ~ */
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id = "BookDao" class="com.dao.impl.BookDaoImpl"></bean>
+<!--        使用静态工厂实例化bean-->
+<!--        <bean id="orderDao" class="com.factory.OrderDaoFactory" factory-method="getOrderDao"></bean>-->
+
+<!--&lt;!&ndash;        使用实例工厂实例化bean&ndash;&gt;-->
+<!--        <bean id="userFactory" class="com.factory.UserDaoFactory"></bean>-->
+
+<!--        <bean id = "UserDao" factory-method="getUserDao" factory-bean="userFactory"></bean>-->
+        <!-- 使用FactoryBean 实例化       -->
+        <bean id = "UserDao" class="com.factory.UserDaoFactory"></bean>
+
+</beans>
