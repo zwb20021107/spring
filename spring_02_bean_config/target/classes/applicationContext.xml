@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /**
+  ~ * @projectName ${PROJECT_NAME}
+  ~ * @package ${PACKAGE_NAME}
+  ~ * @className ${PACKAGE_NAME}.${NAME}
+  ~ * @copyright Copyright 2020 Thunisoft, Inc All rights reserved.
+  ~ */
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--        -->
+    <bean id = "BookDao" name = "Dao" class="com.dao.dao.impl.BookDaoImpl"></bean>
+    <bean id = "BookService" class="com.dao.service.impl.BookServiceImpl" scope = "prototype">
+        <property name="bookDao" ref="Dao"></property>
+    </bean>
+</beans>
