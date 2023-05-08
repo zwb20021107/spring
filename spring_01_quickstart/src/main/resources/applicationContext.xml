@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /**
+  ~ * @projectName ${PROJECT_NAME}
+  ~ * @package ${PACKAGE_NAME}
+  ~ * @className ${PACKAGE_NAME}.${NAME}
+  ~ * @copyright Copyright 2020 Thunisoft, Inc All rights reserved.
+  ~ */
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 配置bean     -->
+<!--    bean 配置-->
+<!--    id 属性表示配置bean-->
+<!--    class 属性表示给bean定义类型-->
+
+    <bean id = "BookDao" class="com.zwb.dao.impl.BookDaoImpl"></bean>
+    <bean id = "BookService" class="com.zwb.service.impl.BookServiceImpl">
+<!--        porperty-->
+<!--        name 表示依赖对象名字-->
+<!--        ref 表示bean名字-->
+        <property name="bookDao" ref="BookDao"></property>
+    </bean>
+</beans>
